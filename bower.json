@@ -1,0 +1,16 @@
+{
+  "name": "underscore.comparator",
+  "main": "underscore.comparator.js",
+  "version": "0.0.0",
+  "dependencies": {
+    "underscore": "~1.5.2"
+  },
+  "devDependencies": {
+    "requirejs": "*",
+    "requirejs-text": "*",
+    "underscore": "*",
+    "jquery": "*",
+    "qunit": "*",
+    "backbone": "~1.1.0"
+  }
+}
