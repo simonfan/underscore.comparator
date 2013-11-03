@@ -1,3 +1,18 @@
+/*
+From MDN: (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+If compareFunction(a, b) is less than 0, sort a to a lower index than b,
+    i.e. a comes first.
+
+If compareFunction(a, b) returns 0, leave a and b unchanged with respect
+    to each other, but sorted with respect to all different elements.
+    Note: the ECMAscript standard does not guarantee this behaviour,
+    and thus not all browsers
+    (e.g. Mozilla versions dating back to at least 2003) respect this.
+
+If compareFunction(a, b) is greater than 0, sort b to a lower index than a.
+*/
+
 define(["underscore"], function(undef) {
 
     function compareValues(aValue, bValue, direction) {
@@ -32,7 +47,7 @@ define(["underscore"], function(undef) {
                     if (res === 0) {
                         var aValue = a[property],
                             bValue = b[property],
-                            direction = directions[property] ? directions[property] : 1;
+                            direction = _.isNumber(directions) ? directions : directions[property] ? directions[property] : 1;
 
                         return compareValues( aValue, bValue, direction );
                     } else {

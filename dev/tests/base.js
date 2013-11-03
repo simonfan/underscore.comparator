@@ -15,7 +15,7 @@ return function() {
             fruits.push({
                 name: 'Banana',
                 price: 4,
-                quantity: 20,
+                quantity: 25,
             });
 
             fruits.push({
@@ -63,6 +63,7 @@ return function() {
         equal(priceThenNameComparator(banana, apple), 1);
     });
 
+
     test('Multiple comparison using backbone models', function() {
         var bbFruits = new Backbone.Collection(_.clone(fruits));
 
@@ -79,6 +80,15 @@ return function() {
         bbFruits.sort();
 
         deepEqual(bbFruits.pluck('name'), ['Banana','Apple','Orange'])
+    });
+
+
+
+    test('direction simple setting', function() {
+        var higherQuantities = _.comparator('quantity', -1);
+
+        // sort fruits
+        deepEqual(_.pluck(fruits.sort(higherQuantities),'quantity'), [30, 25, 20])
     });
 
 }
