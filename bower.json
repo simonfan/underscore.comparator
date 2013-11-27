@@ -1,6 +1,6 @@
 {
   "name": "underscore.comparator",
-  "main": "underscore.comparator.js",
+  "main": "src/underscore.comparator.js",
   "version": "0.0.0",
   "dependencies": {
     "underscore": "~1.5.2"
